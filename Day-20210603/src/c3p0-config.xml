@@ -1,0 +1,18 @@
+<c3p0-config>
+    <named-config name="testC3p0">
+        <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/mysql_001?useUnicode=true&amp;characterEncoding=UTF-8</property>
+        <property name="user">root</property>
+        <property name="password">root</property>
+        <!--定义初始化容量-->
+        <property name="initialPoolSize">20</property>
+        <!--定义申请数据库连接池增量-->
+        <property name="acquireIncrement">2</property>
+        <!--定义数据库连接池最大容量-->
+        <property name="maxPoolSize">40</property>
+        <!--定义数据库连接池最小容量(剩余量)-->
+        <property name="minPoolSize">2</property>
+        <!--超时时间-->
+        <property name="checkoutTimeout">2000</property>
+    </named-config>
+</c3p0-config>

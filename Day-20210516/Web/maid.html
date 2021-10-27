@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="maid.css">
+    <script src="maid.js"></script>
+</head>
+<body>
+    <div>
+        <ul>
+            <li id="imag_0" onmousedown="Detailed(0)" onmouseover="Light_up(0)"></li>
+            <li id="imag_1" onmousedown="Detailed(1)" onmouseover="Light_up(1)"></li>
+            <li id="imag_2" onmousedown="Detailed(2)" onmouseover="Light_up(2)"></li>
+            <li id="imag_3" onmousedown="Detailed(3)" onmouseover="Light_up(3)"></li>
+        </ul>
+    </div>
+
+    <script>
+        var maids = document.getElementsByTagName("li");
+        // alert(typeof(maids[0].style.opacity));
+
+        function Light_up(i){
+            maids[i].style.opacity="1";
+        }
+        function Light_down(i){
+            maids[i].style.opacity="0.3";
+        }
+
+        function Detailed(i){
+            for(var cnt=0; cnt<maids.length; cnt++){
+                if(cnt!=i){
+                    maids[cnt].onmousedown = "";
+                    maids[cnt].setAttribute("onmouseout","Light_down("+cnt+")");
+                    maids[cnt].style.opacity="0.3";
+                }
+            }
+            maids[i].onmouseout = ""
+            var timer = setInterval(function(){Effect(i);},10);
+            function Effect(i){
+                var width_io = window.getComputedStyle(maids[i],null)["width"];
+                var width_i = parseInt(width_io);
+                if(width_i > 491){
+                    for(var cnts=0; cnts<maids.length; cnts++){
+                        if(cnt!=i){
+                            maids[cnts].setAttribute("onmousedown","Detailed("+cnts+")");
+                        }
+                    }
+                    clearInterval(timer);
+                }
+                else{    
+                    var width_lc = 0;
+                    for(var cnt=0; cnt<maids.length; cnt++){
+                        if(cnt!=i){
+                            var width_o = window.getComputedStyle(maids[cnt],null)["width"];
+                            var width_Int = parseInt(width_o);
+                            var width_c = (width_Int - 100)/10;
+                            width_c = width_c > 0 ? Math.ceil(width_c) : Math.floor(width_c);
+                            width_lc += width_c;
+                            maids[cnt].style.width = (width_Int - width_c)+"px";
+                        }
+                    }
+                    maids[i].style.width = (width_i+width_lc)+"px";
+                }
+            }
+        }
+
+        // function Effect(i){
+        //     var width_io = window.getComputedStyle(maids[i],null)["width"];
+        //     var width_i = parseInt(width_io);
+        //     if(width_i > 501){
+        //         clearInterval(timer);
+        //     }
+        //     else{    
+        //         var width_lc = 0;
+        //         for(var cnt=0; cnt<maids.length; cnt++){
+        //             if(cnt!=i){
+        //                 var width_o = window.getComputedStyle(maids[cnt],null)["width"];
+        //                 var width_Int = parseInt(width_o);
+        //                 var width_c = (width_Int - 70)/10;
+        //                 width_c = width_c > 0 ? Math.ceil(width_c) : Math.floor(width_c);
+        //                 width_lc += width_c;
+        //                 maids[cnt].style.width = (width_Int - width_c)+"px";
+        //             }
+        //         }
+
+        //         maids[i].style.width = (width_i+width_lc)+"px";
+        //     }
+        // }
+        
+    </script>
+</body>
+</html>

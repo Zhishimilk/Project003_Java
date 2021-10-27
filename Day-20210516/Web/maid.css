@@ -1,0 +1,71 @@
+*{
+    margin: 0 0;
+    padding: 0 0;
+}
+
+div{
+    border: none;
+    width: 808px;
+    height: 700px;
+    margin: 100px auto;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    list-style: none;
+    border: 1px inset;
+    float: left;
+    width: 198px;
+    height: 698px;
+}
+
+#imag_0{
+    background-image: url(maid/0.png);
+    background-repeat: no-repeat;
+    opacity: 1;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-left-width: 8px;
+    border-right:none;
+    border-left-color: #6933ff;
+    border-top-color: #6933ff;
+    border-bottom-color: #6933ff;
+}
+
+#imag_1{
+    background-image: url(maid/1.png);
+    background-repeat: no-repeat;
+    opacity: 1;
+    border-left-width: 3px;
+    border-right:none;
+    border-left-color: #9670ff;
+    border-top-color: #6933ff;
+    border-bottom-color: #6933ff;
+}
+
+#imag_2{
+    background-image: url(maid/2.png);
+    background-repeat: no-repeat;
+    opacity: 1;
+    border-left-width: 2px;
+    border-right:none;
+    border-left-color: #c8a6ff;
+    border-top-color: #6933ff;
+    border-bottom-color: #6933ff;
+}
+
+#imag_3{
+    background-image: url(maid/3.png);
+    background-repeat: no-repeat;
+    opacity: 1;
+    border-left-width: 1px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-right-color: #dcd2ff;
+    border-left-color: #dcd2ff;
+    border-top-color: #6933ff;
+    border-bottom-color: #6933ff;
+}
